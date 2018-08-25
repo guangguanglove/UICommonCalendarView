@@ -9,4 +9,4 @@
 ```Objective-C
 - (void)selectCurrentDate:(NSDate *)date;
 ```
-![show me~](https://github.com/guangguanglove/UICommonCalendarView/blob/master/UICommonCalendar/WechatIMG12.jpeg,https://github.com/guangguanglove/UICommonCalendarView/blob/master/UICommonCalendar/WechatIMG9.png)
+![show me~](https://github.com/guangguanglove/UICommonCalendarView/blob/master/UICommonCalendar/WechatIMG12.jpeg)
