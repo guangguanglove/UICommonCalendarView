@@ -1,0 +1,18 @@
+//
+//  UICommonCollectionViewCell.m
+//  UICommonCalendar
+//
+//  Created by miqu on 2018/8/24.
+//  Copyright © 2018年 zxg. All rights reserved.
+//
+
+#import "UICommonCollectionViewCell.h"
+
+@implementation UICommonCollectionViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+@end
