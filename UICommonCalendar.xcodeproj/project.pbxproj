@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		47B9DD43212FDB0000418736 /* UICommonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B9DD41212FDB0000418736 /* UICommonCollectionViewCell.m */; };
 		47B9DD44212FDB0000418736 /* UICommonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B9DD42212FDB0000418736 /* UICommonCollectionViewCell.xib */; };
+		47B9DD472131894700418736 /* WechatIMG12.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 47B9DD452131894600418736 /* WechatIMG12.jpeg */; };
+		47B9DD482131894700418736 /* WechatIMG9.png in Resources */ = {isa = PBXBuildFile; fileRef = 47B9DD462131894700418736 /* WechatIMG9.png */; };
 		47E317AF212FAB4300A4516A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E317AE212FAB4300A4516A /* AppDelegate.m */; };
 		47E317B2212FAB4300A4516A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E317B1212FAB4300A4516A /* ViewController.m */; };
 		47E317B5212FAB4300A4516A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E317B3212FAB4300A4516A /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		47B9DD40212FDB0000418736 /* UICommonCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICommonCollectionViewCell.h; sourceTree = "<group>"; };
 		47B9DD41212FDB0000418736 /* UICommonCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICommonCollectionViewCell.m; sourceTree = "<group>"; };
 		47B9DD42212FDB0000418736 /* UICommonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UICommonCollectionViewCell.xib; sourceTree = "<group>"; };
+		47B9DD452131894600418736 /* WechatIMG12.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG12.jpeg; sourceTree = "<group>"; };
+		47B9DD462131894700418736 /* WechatIMG9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WechatIMG9.png; sourceTree = "<group>"; };
 		47E317AA212FAB4300A4516A /* UICommonCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICommonCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E317AD212FAB4300A4516A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47E317AE212FAB4300A4516A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				47E317B6212FAB4400A4516A /* Assets.xcassets */,
 				47E317B8212FAB4400A4516A /* LaunchScreen.storyboard */,
 				47E317E8212FACCD00A4516A /* UICommonCalendarView */,
+				47B9DD462131894700418736 /* WechatIMG9.png */,
+				47B9DD452131894600418736 /* WechatIMG12.jpeg */,
 				47E317BB212FAB4400A4516A /* Info.plist */,
 				47E317BC212FAB4400A4516A /* main.m */,
 			);
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				47E317BA212FAB4400A4516A /* LaunchScreen.storyboard in Resources */,
+				47B9DD482131894700418736 /* WechatIMG9.png in Resources */,
 				47B9DD44212FDB0000418736 /* UICommonCollectionViewCell.xib in Resources */,
+				47B9DD472131894700418736 /* WechatIMG12.jpeg in Resources */,
 				47E317B7212FAB4400A4516A /* Assets.xcassets in Resources */,
 				47E317B5212FAB4300A4516A /* Main.storyboard in Resources */,
 			);
@@ -460,6 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22K9LD86B6;
 				INFOPLIST_FILE = UICommonCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22K9LD86B6;
 				INFOPLIST_FILE = UICommonCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
