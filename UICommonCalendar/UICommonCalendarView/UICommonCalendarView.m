@@ -87,7 +87,7 @@ static NSUInteger kOnePageHasTotalItem = 49;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:179 green:186 blue:213 alpha:1];
     [self addSubview:self.collectionView];
     [self.collectionView registerNib:[UINib nibWithNibName:kCollectionViewCell bundle:nil] forCellWithReuseIdentifier:kCollectionViewCell];
     self.collectionView.delegate = self;
@@ -107,12 +107,22 @@ static NSUInteger kOnePageHasTotalItem = 49;
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
         [self getLastMonthDate:self.currentShowDate];
         [self resetUI];
+        [self delegateOutCurrentDate];
     } else if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
         [self getNextMonthDate:self.currentShowDate];
         [self resetUI];
+        [self delegateOutCurrentDate];
     }
 }
 
+#pragma mark 代理
+- (void)delegateOutCurrentDate {
+    if (self.calendarDelagate && [self.calendarDelagate respondsToSelector:@selector(selectCurrentDate:)]) {
+        [self.calendarDelagate selectCurrentDate:self.currentShowDate];
+    }
+}
+
+#pragma mark 重置UI
 - (void)resetUI {
     [self.collectionView removeFromSuperview];
     self.collectionView.delegate = nil;
@@ -120,9 +130,14 @@ static NSUInteger kOnePageHasTotalItem = 49;
     [self configDate];
     [self setUpCollectionView];
     [self setUpselectLabel];
+    if ([self isTodayMainView]) {
+        self.currentShowDate = [NSDate date];
+        [self delegateOutCurrentDate];
+    }
 
 }
 
+#pragma mark 初始化选择label
 - (void)setUpselectLabel {
     self.selectLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     self.selectLabel.clipsToBounds = YES;
@@ -162,7 +177,7 @@ static NSUInteger kOnePageHasTotalItem = 49;
             self.selectLabel.text = cell.textLabel.text;
         }
     } else {
-        if (self.self.otherDayIndex == indexPath.row) {
+        if (self.otherDayIndex == indexPath.row) {
             self.selectLabel.center = cell.center;
             self.selectLabel.text = cell.textLabel.text;
         }
@@ -209,8 +224,19 @@ static NSUInteger kOnePageHasTotalItem = 49;
         return;
     }
     UICommonCollectionViewCell *cell = (UICommonCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if (cell.textLabel.text.length == 0) {
+        return;
+    }
     self.selectLabel.center = cell.center;
     self.selectLabel.text = cell.textLabel.text;
+
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSCalendarUnit dayInfoUnits = NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSDateComponents *components = [calendar components:dayInfoUnits fromDate:self.currentShowDate];
+    components.day = [self.selectLabel.text integerValue];
+    self.currentShowDate = [calendar dateFromComponents:components];
+    [self delegateOutCurrentDate];
+
 }
 
 #pragma mark - 获取日期数据
@@ -341,7 +367,7 @@ static NSUInteger kOnePageHasTotalItem = 49;
 
 #pragma mark - remove collection
 - (void)removeCollectionView {
-
+    
 
 }
 

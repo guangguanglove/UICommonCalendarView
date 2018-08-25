@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol UICommonCalendarDelegate
+@protocol UICommonCalendarDelegate<NSObject>
 
 - (void)selectCurrentDate:(NSDate *)date;
 
